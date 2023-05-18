@@ -1,0 +1,175 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --foreground-rgb: 255, 255, 255;
+    --background-start-rgb: 0, 0, 0;
+    --background-end-rgb: 0, 0, 0;
+  }
+}
+#test123{
+  box-sizing: border-box;
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+body {
+  color:white;
+  background-color: rgb(var(#526760));
+  background: linear-gradient(
+      to bottom,
+      transparent,
+      rgb(var(--background-end-rgb))
+    )
+    rgb(var(--background-start-rgb));
+  height: 90%;
+}
+.flex-container {
+  display: flex;
+  flex-direction: row;
+  height: 100%;
+}
+
+#right {
+  flex: 33%;
+  justify-content: center;
+  flex-direction:column;
+  align-items:center;
+  border-width: 1px;
+  border-style: inset;
+  border-color: white;
+  height: 100%;
+
+}
+#middle{
+  flex: 34%;
+  justify-content: center;
+  flex-direction:column;
+  align-items:center;
+  border-width: 1px;
+  border-style: inset;
+  border-color: white;
+  height: 100%;
+}
+#left {
+  flex: 33%;
+  justify-content: center;
+  flex-direction:column;
+  align-items:center;
+  border-width: 1px;
+  border-style: inset;
+  border-color: white;
+  height: 100%;
+}
+#color{
+  margin-bottom: 10%;
+  background-color: #67afcb;
+  color: black;
+}
+#reviewCrowd{
+  padding: 3%;
+  display: flex;
+  background-color: #526760;
+  font-size: 10vh;
+  flex-direction: row;
+  justify-content: center;
+}
+#reviewSnow{
+  padding: 3%;
+  display: flex;
+  background-color: #67afcb;
+  font-size: 10vh;
+  flex-direction: row;
+  justify-content: center;
+}
+
+
+.content{
+  flex-direction: column;
+}
+footer{
+  height: 10%;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background-color: red;
+  color: white;
+  text-align: center;
+}
+.vertical-container{
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+#header{
+font-size: 100%;
+color: #090446;
+padding: 5%;
+flex: 33%;
+  justify-content: center;
+  flex-direction:column;
+  align-items:center;
+  border-width: 1px;
+  border-style: inset;
+  border-color: white;
+  text-align: center;
+  height: 100%;
+  background-color: #67afcb;
+}
+.formLabel{
+  color: white;
+}
+#input{
+  color: black;
+
+}
+#inputTrail{
+
+}
+#trailselect{
+  color:black;
+  font-size: 4vh;
+  justify-content: center;
+  flex-direction: row;
+  padding: 3%;
+  text-align: center;
+}
+#first{
+  color: black;
+}
+#submitForm{
+  color:black;
+  font-size: 2vh;
+  justify-content: center;
+  padding: 3%;
+  text-align: center;
+}
+button {
+  background-color: white;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  color: black;
+}
+.content{
+ background-color: #BBD5ED;
+}
+.on {
+  color: yellow;
+}
+.off {
+  color: lightgray;
+}
+option{
+  color: black;
+}
+/* Responsive layout - makes a one column layout instead of a two-column layout */
+@media (max-width: 800px) {
+  .flex-container {
+    flex-direction: row;
+  }
+}
