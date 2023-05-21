@@ -16,6 +16,19 @@
   display: flex;
   flex-direction: column;
 }
+.review-instance{
+  display: flex;
+  flex-direction: row;
+}
+.label_head{
+  font-size: 7vh;
+  background-color: #8fd694;
+}
+.review-datum{
+  flex: 50%;
+  justify-content: center;
+  align-items:center;
+}
 body {
   color:white;
   background-color: rgb(var(#526760));

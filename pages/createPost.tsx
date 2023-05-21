@@ -1,6 +1,7 @@
 import 'styles/globals.css';
 import Link from 'next/link';
 import React, { useState } from 'react';
+
 import 'firebase/compat/auth';
 import 'firebase/compat/database';
 import firebase from '../firebase'; // Update the path if needed
@@ -101,9 +102,12 @@ export default function Home() {
       if (response.ok) {
         console.log('Post created successfully');
         // Clear form inputs
-        setTrailName('');
+
+        setRating(0);
+        setRating1(0);
         setCrowdNum(0);
         setStarHello(0);
+        window.location.href = '/page';
       } else {
         console.error('Error creating post:', response.status);
       }
@@ -119,7 +123,7 @@ export default function Home() {
         <select name="trail" id="inputTrail" onChange={handleTrailSelect} >
           <option value="Nosedive">Nosedive</option>
           <option value="Liftline">Liftline</option>
-          <option value="Lower-nosedive">Lower Nosedive</option>
+          <option value="Lower-Nosedive">Lower Nosedive</option>
           <option value="Hayride">Hayride</option>
         </select>
       </div>

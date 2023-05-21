@@ -34,11 +34,12 @@
 // }
 import admin from 'firebase-admin';
 import serviceAccount from '/adminkey.json';
-
-admin.initializeApp({
-  credential: admin.credential.cert(serviceAccount),
-  databaseURL: 'https://skientia-default-rtdb.firebaseio.com'
-});
+if (!admin.apps.length) {
+  admin.initializeApp({
+    credential: admin.credential.cert(serviceAccount),
+    databaseURL: 'https://skientia-default-rtdb.firebaseio.com'
+  });
+}
 
 export default async function postData(req, res) {
   if (req.method === 'POST') {

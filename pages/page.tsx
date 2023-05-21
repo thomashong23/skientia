@@ -2,23 +2,62 @@ import Image from 'next/image'
 import React from 'react';
 import Link from 'next/link';
 import 'styles/globals.css';
+import { useEffect, useState } from 'react';
+//const [posts, setPosts] = useState([]);
+import firebase from '../firebase';
+import { getDatabase, ref, onValue } from 'firebase/database';
 
+import { database } from '../firebase';
+
+interface Review {
+  id: string;
+  trailName: string;
+  crowdNum: number;
+  starHello: number;
+}
 function Home() {
-  var hello = 0;
-  function changeColor() {
-    const changed = document.getElementById("test123");
-    hello += 1;
-    if (changed) {
-      if ((hello / 2 % 1)) {
-        changed.style.backgroundColor = "#526760";
+  const [reviews, setReviews] = useState<Review[]>([]);
+  console.log(reviews);
+  useEffect(() => {
+    const database = getDatabase(firebase);
+
+    // Create a reference to the "reviews" node in the database
+    const reviewsRef = ref(database, 'posts');
+
+    // Listen for changes in the reviews data
+    onValue(reviewsRef, (snapshot) => {
+      const data = snapshot.val();
+
+      if (data) {
+        // Convert the data object to an array
+        const reviewsArray = Object.keys(data).map((key) => ({
+          id: key,
+          ...data[key],
+        }));
+
+        // Update the reviews state with the retrieved data
+        setReviews(reviewsArray);
       }
-      else {
-        changed.style.backgroundColor = "#100774";
-      }
+    });
+  }, []);
+
+  // Group the reviews by trail name
+  const reviewsByTrailName: { [key: string]: Review[] } = {};
+
+  reviews.forEach((review) => {
+    if (!reviewsByTrailName[review.trailName]) {
+      reviewsByTrailName[review.trailName] = [];
     }
+    reviewsByTrailName[review.trailName].push(review);
+  });
+  const renderStars = (numStars: number) => {
+    const stars = [];
+    for (let i = 0; i < numStars; i++) {
+      stars.push(<span key={i}>&#9733;</span>);
+    }
+    return stars;
+  };
 
-
-  }
   return (
     <div id='test123'>
 
@@ -30,28 +69,19 @@ function Home() {
         <div className='body'>
 
         </div>
-        <br></br>
-        <br></br>
-        <br></br>
-        <br></br>
-        <br></br>
-        <br></br>
-        <br></br>
-        <br></br>
-        <br></br>
-        <br></br>
-        <br></br>
-        <br></br>
-        <br></br>
-        <br></br>
-        <br></br>
-        <br></br>
-        <br></br>
-        <br></br>
-        <br></br>
-        <br></br>
+        <div>
+          {Object.entries(reviewsByTrailName).map(([trailName, reviews]) => (
+            <div key={trailName}>
+              <h2 className='label_head'>{trailName}</h2>
+              {reviews.map((review) => (
+                <div key={review.id} className='review-instance'>
+                  <div className='review-datum'> CROWDS: {renderStars(review.crowdNum)} </div><div className='review-datum'>SNOW CONDITIONS: {renderStars(review.starHello)}</div>
 
-        <button onClick={changeColor} id='color'>hit this to change color</button>
+                </div>
+              ))}
+            </div>
+          ))}
+        </div>
 
       </div>
       <footer>
