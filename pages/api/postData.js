@@ -44,18 +44,23 @@ if (!admin.apps.length) {
 export default async function postData(req, res) {
   if (req.method === 'POST') {
     // Extract the data from the request body
-    const { trailName, crowdNum, starHello } = req.body;
+    const { trailName, crowdNum, starHello, currentTime } = req.body;
 
     // Perform the necessary Firebase database operations
     try {
       const database = admin.database();
       // Write your database code here
       // For example:
-      await database.ref('posts').push({
-        trailName,
-        crowdNum,
-        starHello,
-      });
+      if (trailName != "") {
+        await database.ref('posts').push({
+          trailName,
+          crowdNum,
+          starHello,
+          currentTime,
+
+        });
+
+      }
 
       res.status(200).json({ message: 'Post created successfully' });
     } catch (error) {

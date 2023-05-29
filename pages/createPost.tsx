@@ -1,13 +1,15 @@
 import 'styles/globals.css';
 import Link from 'next/link';
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 
 import 'firebase/compat/auth';
 import 'firebase/compat/database';
 import firebase from '../firebase'; // Update the path if needed
 
 
+
 export default function Home() {
+  const [currentTime, setCurrentTime] = useState(0);
   const [trailName, setTrailName] = useState('');
   const [starHello, setStarHello] = useState(0);
   const [crowdNum, setCrowdNum] = useState(0);
@@ -16,6 +18,18 @@ export default function Home() {
   const handleTrailSelect = (event: React.ChangeEvent<HTMLSelectElement>) => {
     setTrailName(event.target.value);
   };
+
+  const getCurrentTime = () => {
+    const now = new Date();
+    const formattedTime = now.getTime() // Adjust the formatting as per your requirements
+    setCurrentTime(formattedTime);
+    console.log("formatted time is " + formattedTime);
+    setCurrentTime(formattedTime);
+  };
+
+  useEffect(() => {
+    getCurrentTime();
+  }, []); // Run only once on initial render
   const StarRating = () => {
     return (
       <div className="star-rating">
@@ -32,8 +46,9 @@ export default function Home() {
               onClick={() => {
                 setRating1(index1);
                 setStarHello(index1);
-                if (document.getElementById('starHello')) {
-                  document.getElementById('starHello').innerHTML = String("The current rating is: " + index1);
+                const starHelloElement = document.getElementById('starHello');
+                if (starHelloElement) {
+                  starHelloElement.innerHTML = "The current crowds is: " + index1;
                 }
 
               }
@@ -65,8 +80,9 @@ export default function Home() {
               onClick={() => {
                 setRating(index);
                 setCrowdNum(index);
-                if (document.getElementById('crowdNum')) {
-                  document.getElementById('crowdNum').innerHTML = String("The current crowds is: " + index);
+                const crowdNumElement = document.getElementById('crowdNum');
+                if (crowdNumElement) {
+                  crowdNumElement.innerHTML = "The current crowds is: " + index;
                 }
 
               }
@@ -86,7 +102,10 @@ export default function Home() {
     event.preventDefault();
 
 
+
     try {
+      getCurrentTime();
+      console.log("current time is " + currentTime)
       const response = await fetch('/api/postData', {
         method: 'POST',
         headers: {
@@ -96,6 +115,7 @@ export default function Home() {
           trailName,
           crowdNum,
           starHello,
+          currentTime,
         }),
       });
 
@@ -147,6 +167,13 @@ export default function Home() {
           <div id="submitForm"><button type="submit">Submit</button></div>
         </form>
       </div>
+      <footer>
+        <nav className='flex-container'>
+          <Link href="/page" id='left'><div >HOME</div></Link>
+          <Link href="/createPost" id='middle'><div >POST</div></Link>
+          <Link href="/page" id='right'><div >ACCOUNT</div></Link>
+        </nav>
+      </footer>
     </div>
   )
 

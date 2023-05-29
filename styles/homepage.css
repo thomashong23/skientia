@@ -1,0 +1,95 @@
+/* styles.css */
+
+/* Color palette */
+:root {
+  --primary-color: #67AFCB;
+  --secondary-color: #090446;
+  --tertiary-color: #BBD5ED;
+  --quaternary-color: #526760;
+  --quinary-color: #8FD694;
+}
+
+/* Overall page styles */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+#test123 {
+  background: linear-gradient(to bottom, var(--secondary-color), var(--quaternary-color));
+  color: white;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.content {
+  flex: 1;
+  padding: 5vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* Header styles */
+#header {
+  text-align: center;
+  margin-bottom: 5vw;
+}
+
+#header h1 {
+  font-size: 4vw;
+  color: var(--primary-color);
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+/* Review styles */
+.label_head {
+  font-size: 3vw;
+  color: var(--primary-color);
+  margin-top: 5vw;
+  margin-bottom: 3vw;
+}
+
+.review-instance {
+  background-color: var(--tertiary-color);
+  padding: 3vw;
+  margin-bottom: 3vw;
+  border-radius: 2vw;
+  box-shadow: 0 0.5vw 1vw rgba(0, 0, 0, 0.1);
+  width: 100%;
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+}
+
+.review-datum {
+  font-size: 2vw;
+  color: var(--quaternary-color);
+  margin-bottom: 1.5vw;
+}
+
+/* Footer styles */
+footer {
+  background: linear-gradient(to bottom, var(--primary-color), var(--quinary-color));
+  padding: 1vw 2vw;
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+  font-size: 2vw;
+}
+
+nav a:hover {
+  color: var(--secondary-color);
+  text-shadow: 0 0.5vw 1vw rgba(0, 0, 0, 0.3);
+}

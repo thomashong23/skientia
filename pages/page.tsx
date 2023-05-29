@@ -1,7 +1,8 @@
-import Image from 'next/image'
+
 import React from 'react';
 import Link from 'next/link';
 import 'styles/globals.css';
+import 'styles/homepage.css';
 import { useEffect, useState } from 'react';
 //const [posts, setPosts] = useState([]);
 import firebase from '../firebase';
@@ -34,9 +35,20 @@ function Home() {
           id: key,
           ...data[key],
         }));
+        var newReviewsArray = [];
+        var deleteReviews = [];
+        for (let i = 0; i < reviewsArray.length; i++) {
+          if (reviewsArray[i].currentTime > Date.now() - 10 * 60 * 1000) {
+            newReviewsArray.push(reviewsArray[i])
+          }
+          else {
+            deleteReviews.push(reviewsArray[i])
+            console.log("Deleting " + reviewsArray[i].trailName)
+          }
+        }
 
         // Update the reviews state with the retrieved data
-        setReviews(reviewsArray);
+        setReviews(newReviewsArray);
       }
     });
   }, []);
@@ -75,7 +87,7 @@ function Home() {
               <h2 className='label_head'>{trailName}</h2>
               {reviews.map((review) => (
                 <div key={review.id} className='review-instance'>
-                  <div className='review-datum'> CROWDS: {renderStars(review.crowdNum)} </div><div className='review-datum'>SNOW CONDITIONS: {renderStars(review.starHello)}</div>
+                  <div className='review-datum'> CROWDS: {renderStars(review.crowdNum)} </div><div className='review-datum'>CONDITIONS: {renderStars(review.starHello)}</div>
 
                 </div>
               ))}
