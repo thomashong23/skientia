@@ -1,5 +1,6 @@
 import 'styles/globals.css';
 import Link from 'next/link';
+import { useRouter } from 'next/router';
 import React, { useState, useEffect } from 'react';
 
 import 'firebase/compat/auth';
@@ -15,6 +16,7 @@ export default function Home() {
   const [crowdNum, setCrowdNum] = useState(0);
   const [rating1, setRating1] = useState(0);
   const [rating, setRating] = useState(0);
+  const router = useRouter();
   const handleTrailSelect = (event: React.ChangeEvent<HTMLSelectElement>) => {
     setTrailName(event.target.value);
   };
@@ -130,7 +132,7 @@ export default function Home() {
         setRating1(0);
         setCrowdNum(0);
         setStarHello(0);
-        window.location.href = '/page';
+        router.push('/page');
       } else {
         console.error('Error creating post:', response.status);
       }
