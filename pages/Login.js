@@ -1,6 +1,6 @@
 import { useSession, signIn, signOut } from "next-auth/react"
 import { useRouter } from 'next/router';
-import styles from '../styles/Login.module.css'
+import styles from '../styles/login.module.css'
 
 
 export default function Login() {
