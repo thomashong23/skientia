@@ -2,6 +2,7 @@ import { useSession, signIn, signOut } from 'next-auth/react';
 export default function IndexPage() {
   const { data, status } = useSession();
   if (status === 'loading') return <h1> loading... please wait</h1>;
+  console.log(process.env.GOOGLE_CLIENT_ID);
   if (status === 'authenticated') {
     return (
       <div>
