@@ -10,5 +10,6 @@ export const authOptions = {
   session: {
     strategy: 'jwt',
   },
+  secret: 'secretkeyobidog4524393hfu', // Add your secret key here
 };
 export default NextAuth(authOptions);
