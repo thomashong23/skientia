@@ -28,8 +28,11 @@ export default function Home() {
   };
 
   useEffect(() => {
+
+
     getCurrentTime();
-  }, []); // Run only once on initial render
+
+  })
   const StarRating = () => {
     return (
       <div className="star-rating">
@@ -176,6 +179,4 @@ export default function Home() {
       </footer>
     </div>
   )
-
-
 }
