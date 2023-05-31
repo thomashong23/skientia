@@ -1,6 +1,6 @@
 import { useSession, signIn, signOut } from "next-auth/react"
 import { useRouter } from 'next/router';
-import styles from '../styles/Profile.module.css'
+import styles from '../styles/profile.module.css'
 
 
 export default function Profile() {
