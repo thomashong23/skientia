@@ -1,4 +1,5 @@
 import { useSession, signIn, signOut } from 'next-auth/react';
+import React from 'react';
 import 'styles/globals.css';
 import Link from 'next/link';
 export default function IndexPage() {
