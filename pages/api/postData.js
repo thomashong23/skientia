@@ -35,7 +35,6 @@
 
 import admin from 'firebase-admin';
 import serviceAccount from '/adminkey.json';
-import { getSession } from 'next-auth/client';
 if (!admin.apps.length) {
   admin.initializeApp({
     credential: admin.credential.cert(serviceAccount),
