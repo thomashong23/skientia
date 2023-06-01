@@ -9,6 +9,13 @@ export default function IndexPage() {
         <h1> hi {data.user.name}</h1>
         <img src={data.user.image} alt={data.user.name + ' photo'} />
         <button onClick={signOut}>sign out</button>
+        <footer>
+          <nav className='flex-container'>
+            <Link href="/page" id='left'><div >HOME</div></Link>
+            <Link href="/createPost" id='middle'><div >POST</div></Link>
+            <Link href="/page" id='right'><div >ACCOUNT</div></Link>
+          </nav>
+        </footer>
       </div>
     );
   }

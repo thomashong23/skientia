@@ -11,6 +11,7 @@ export default NextAuth({
   callbacks: {
     async signIn(user, account, profile) {
       // Customize sign-in behavior if needed
+      const name = profile.name;
       return true;
     },
     async redirect(url, baseUrl) {
