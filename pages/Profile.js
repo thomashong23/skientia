@@ -22,6 +22,13 @@ export default function Profile() {
 
           }}>Go back</button>
         </div>
+        <footer>
+          <nav className='flex-container'>
+            <Link href="/page" id='left'><div >HOME</div></Link>
+            <Link href="/createPost" id='middle'><div >POST</div></Link>
+            <Link href="/page" id='right'><div >ACCOUNT</div></Link>
+          </nav>
+        </footer>
       </div>
     )
   }

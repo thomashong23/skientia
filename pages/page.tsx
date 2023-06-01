@@ -101,7 +101,7 @@ function Home() {
         <nav className='flex-container'>
           <Link href="/page" id='left'><div >HOME</div></Link>
           <Link href="/createPost" id='middle'><div >POST</div></Link>
-          <Link href="/page" id='right'><div >ACCOUNT</div></Link>
+          <Link href="/Profile" id='right'><div >ACCOUNT</div></Link>
         </nav>
       </footer>
     </div>

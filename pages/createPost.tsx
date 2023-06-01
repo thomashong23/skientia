@@ -17,6 +17,7 @@ export default function Home() {
   const [rating1, setRating1] = useState(0);
   const [rating, setRating] = useState(0);
   const router = useRouter();
+
   const handleTrailSelect = (event: React.ChangeEvent<HTMLSelectElement>) => {
     setTrailName(event.target.value);
   };
