@@ -21,28 +21,22 @@ export default function Home() {
     setTrailName(event.target.value);
   };
 
+
   const getCurrentTime = () => {
     const now = new Date();
     const formattedTime = now.getTime() // Adjust the formatting as per your requirements
     setCurrentTime(formattedTime);
-    console.log("formatted time is " + formattedTime);
     setCurrentTime(formattedTime);
   };
-
   useEffect(() => {
-
-
     getCurrentTime();
+  }, []); // Add empty dependency array
 
-  })
   const StarRating = () => {
     return (
       <div className="star-rating">
         {[...Array(5)].map((star, index1) => {
           index1 += 1;
-
-          console.log(rating1);
-          console.log("starhello is " + starHello)
           return (
             <button
               type="button"
@@ -75,8 +69,7 @@ export default function Home() {
         {[...Array(5)].map((star, index) => {
           index += 1;
 
-          console.log(rating);
-          console.log("crowdNum is " + crowdNum)
+
           return (
             <button
               type="button"

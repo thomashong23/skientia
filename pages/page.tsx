@@ -21,6 +21,7 @@ function Home() {
   console.log(reviews);
   useEffect(() => {
     const database = getDatabase(firebase);
+    console.log(process.env)
 
     // Create a reference to the "reviews" node in the database
     const reviewsRef = ref(database, 'posts');
