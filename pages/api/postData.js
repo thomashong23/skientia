@@ -32,7 +32,7 @@
 //     res.status(405).json({ message: 'Method Not Allowed' });
 //   }
 // }
-import { getSession } from 'next-auth/client';
+import { useSession } from 'next-auth/client';
 import admin from 'firebase-admin';
 import serviceAccount from '/adminkey.json';
 if (!admin.apps.length) {

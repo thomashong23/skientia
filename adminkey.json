@@ -1,0 +1,13 @@
+{
+  "type": "service_account",
+  "project_id": "skientia",
+  "private_key_id": "6474d77e3e665fb029d9b91e7a3bc2174b8875a3",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvgIBADANBgkqhkiG9w0BAQEFAASCBKgwggSkAgEAAoIBAQC5rYWEfVLPuNr9\nct1xSUGQSR5TeTNoeSGi/sDS2MMFBbAKA2f8xu0icEKTL0iXJ7laD9QO9J1a2maT\n8Wjzj086dsx8jWTMdOEO/iwXJl9N/9crjyWgsiyYOkvRvEy4ircysjZxx/+yLSZE\nAoOzFvpLLToxeFQ++e1d/4rvjzO8aHkL8TKKy9T0lM+gAvaIy7FQg1RcJbsuBel7\nHMt+5kdF8NqCLsh3Ys++ixRPYIzQwqs1W5wj4sBcxTRDAccg3S/vpK6jy9PUbswc\nHS/YprrWy42MRu6vZsOD+nNkafEj2bV/6uRpXas4N73+cCEysR1g2x/fVES6Jjn1\nn2TV656XAgMBAAECggEAHwDhXXkLndGxB0bpwOPJhc0fujJvqg8n1a6SBeLZ1XnY\npiNhdqzEpc5231qy1UJ1yZsA/qpLqAL1w9g4fQq94PY7OMTnQth1R+qa9BadLUn9\n5LEXSFjX52c8h73YVawb4OQvARqzEE5HqG1/DiVVD75yjBYagxV6VAq6aTvRGLFU\nSwqoPhGl/PpgJyHbHj1FLxtgmPSIMbtHiIA8CyDrJfPKYhL0QIMaotIy6RznFKWk\n9STx14F0vdmqDxym4UeFaFrjTCPy9jIKEi/DFlzRMDMKeDygsBCICNh1XfSb9m1a\nooE6TbkBChHCP4Ryzr0P2xzn/IRZK9u44ViHBdNU+QKBgQDdykIFQP1DX90Ib1mH\n7AXaGLJiCTE7+oKk4JybHp7EZhOjCeyBvhLza1jgmZnvwoZn2OmkwXmIxF9idm1A\ny0KdaNCbPTe7W2dmJ0t6bKP/Q1F3jfu0/qkcms61xqQh+aancCgRYapqIqXZyBxi\nPf/WKDxjaoOvD1A8zTUwBdSGOwKBgQDWUVAG7bsag7O0WJhZQGGKeh/6bxhPPMoB\nTeQXf/SktIQ93Aa1J+MHTSoRMlpdezv337AB5rJjPcKUI07tjNPZG+8+idnOo1k5\nXLcyabJojPHS6pgHinyRVTFNsKD3NuUa1oTtrUx9fFgf1kFZxcpprSahGVAuuqcX\nE6enUWdXVQKBgQCwMrvKcrwBp4nw5o1JJ1/qyU4GBml/zd+2Xt7reSMGwlV9ZCfp\nVvi1O6XrIPwjdvXSUIglpLMJzYA9t/nJzPEKHrgDbFn3VYFKrZMQGnkbFP8GrNy4\nCMyO9gmcbcf9WdllEfwy+tUo5oe+AXVTMxApseNv07H0BIVpGFnV4fvZ+wKBgDPx\niT/kppCKkyeGwYYAQKPbbZy5CF9MEHm4cyvu61BwIA0OIuINRM0kOqnoVlaJ48L0\nCCitzVaYRWy6EgspMr9QMfAqYQvgM2PfwNcLHx6P6pyAF1Dck8x1pXl68ch5GZYj\noBwrAHr5hDJTL4uekKyENvScuf5ZZt4E+YFoDW/xAoGBAMhkdJgraPSMHYbKDeeu\nhIZMYjl2bdOcjHM/biglzLz4k5IL6JJmY8JrKsuFqN2bqQ0q2t7qQPPPGVEyOVMu\nBLI2ps6XT6u1fVyJ17JJbAR/YCC2xOXwUj0awpAYkJZh5+cZlk/vm/wYhlP+qZ2d\nrA33JGX/XM6JXp6gtj04hHqk\n-----END PRIVATE KEY-----\n",
+  "client_email": "firebase-adminsdk-mad2f@skientia.iam.gserviceaccount.com",
+  "client_id": "114757709500336106384",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/firebase-adminsdk-mad2f%40skientia.iam.gserviceaccount.com",
+  "universe_domain": "googleapis.com"
+}
