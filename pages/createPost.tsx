@@ -2,6 +2,7 @@ import 'styles/globals.css';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
 import React, { useState, useEffect } from 'react';
+import { useSession, signIn, signOut } from 'next-auth/react';
 
 import 'firebase/compat/auth';
 import 'firebase/compat/database';
@@ -17,6 +18,8 @@ export default function Home() {
   const [rating1, setRating1] = useState(0);
   const [rating, setRating] = useState(0);
   const router = useRouter();
+  const [username, setUsername] = useState('');
+  const { data, status } = useSession();
 
   const handleTrailSelect = (event: React.ChangeEvent<HTMLSelectElement>) => {
     setTrailName(event.target.value);
@@ -31,6 +34,10 @@ export default function Home() {
   };
   useEffect(() => {
     getCurrentTime();
+    if (data?.user?.name) {
+      setUsername(data?.user?.name)
+    }
+
   }, []); // Add empty dependency array
 
   const StarRating = () => {

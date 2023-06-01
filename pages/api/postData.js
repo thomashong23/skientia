@@ -32,9 +32,10 @@
 //     res.status(405).json({ message: 'Method Not Allowed' });
 //   }
 // }
-import { useSession } from 'next-auth/client';
+
 import admin from 'firebase-admin';
 import serviceAccount from '/adminkey.json';
+import { getSession } from 'next-auth/client';
 if (!admin.apps.length) {
   admin.initializeApp({
     credential: admin.credential.cert(serviceAccount),
@@ -43,7 +44,15 @@ if (!admin.apps.length) {
 }
 
 export default async function postData(req, res) {
-  const { data, status } = useSession();
+  const session = await getSession({ req });
+  const user = session?.user; // Access the authenticated user from the session
+
+  if (!user) {
+    return res.status(401).json({ error: 'Not authenticated' });
+  }
+
+  const name = user.name; // Access the user's name
+
   if (req.method === 'POST') {
     // Extract the data from the request body
     const { trailName, crowdNum, starHello, currentTime } = req.body;
