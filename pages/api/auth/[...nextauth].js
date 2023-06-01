@@ -5,6 +5,7 @@ export const authOptions = {
     GoogleProvider({
       clientId: process.env.GOOGLE_CLIENT_ID,
       clientSecret: process.env.GOOGLE_CLIENT_SECRET,
+      redirect_uri: "https://skientia.vercel.app/api/auth/callback/google",
     }),
   ],
   session: {
