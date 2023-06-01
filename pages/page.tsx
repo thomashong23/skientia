@@ -88,7 +88,7 @@ function Home() {
               <h2 className='label_head'>{trailName}</h2>
               {reviews.map((review) => (
                 <div key={review.id} className='review-instance'>
-                  <div className='review-datum'> CROWDS: {renderStars(review.crowdNum)} </div><div className='review-datum'>CONDITIONS: {renderStars(review.starHello)}</div>
+                  <div className='review-datum'> CROWDS: {renderStars(review.crowdNum)} </div><div className='review-datum'>SNOW: {renderStars(review.starHello)}</div>
 
                 </div>
               ))}
