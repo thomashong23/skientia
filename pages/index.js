@@ -1,4 +1,5 @@
 import { useSession, signIn, signOut } from 'next-auth/react';
+import 'styles/globals.css';
 export default function IndexPage() {
   const { data, status } = useSession();
   if (status === 'loading') return <h1> loading... please wait</h1>;
