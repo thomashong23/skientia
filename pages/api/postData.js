@@ -43,11 +43,11 @@ if (!admin.apps.length) {
 }
 
 export default async function postData(req, res) {
-  const session = await getSession({ req });
+  const { data, status } = useSession();
   if (req.method === 'POST') {
     // Extract the data from the request body
     const { trailName, crowdNum, starHello, currentTime } = req.body;
-    const user = session?.user; // Access the authenticated user from the session
+    const user = data.user.name; // Access the authenticated user from the session
 
     if (!user) {
       return res.status(401).json({ error: 'Not authenticated' });

@@ -8,11 +8,12 @@ export default function IndexPage() {
   console.log(process.env.GOOGLE_CLIENT_ID);
   if (status === 'authenticated') {
     return (
-      <div><div>
-        <h1> hi {data.user.name}</h1>
-        <img src={data.user.image} alt={data.user.name + ' photo'} />
-        <button onClick={signOut}>sign out</button>
-      </div>
+      <div className="content">
+        <div className="vertical-container">
+          <h1> hi {data.user.name}</h1>
+          <img src={data.user.image} alt={data.user.name + ' photo'} />
+          <button onClick={signOut}>sign out</button>
+        </div>
         <footer>
           <nav className='flex-container'>
             <Link href="/page" id='left'><div >HOME</div></Link>
