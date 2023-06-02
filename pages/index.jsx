@@ -7,6 +7,7 @@ export default function IndexPage() {
   if (status === 'loading') return <h1> loading... please wait</h1>;
   console.log(process.env.GOOGLE_CLIENT_ID);
   if (status === 'authenticated') {
+
     return (
       <div className="content">
         <div className="vertical-container">
