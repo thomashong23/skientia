@@ -3,7 +3,7 @@ import React from 'react';
 import 'styles/globals.css';
 import Link from 'next/link';
 export default function IndexPage() {
-  console.log('NEXTAUTH SECRET:', process.env.NEXT_PUBLIC_SECRET);
+  console.log('NEXTAUTH SECRET:', process.env.NEXT_SECRET);
   const { data, status } = useSession();
   if (status === 'loading') return <h1> loading... please wait</h1>;
   console.log(process.env.GOOGLE_CLIENT_ID);
