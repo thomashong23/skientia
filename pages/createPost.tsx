@@ -32,9 +32,6 @@ export default function Home() {
     setCurrentTime(formattedTime);
     setCurrentTime(formattedTime);
   };
-  useEffect(() => {
-
-  }, [status, session]);
 
   useEffect(() => {
     getCurrentTime();
