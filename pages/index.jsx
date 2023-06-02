@@ -15,6 +15,7 @@ export default function IndexPage() {
           <img src={data.user.image} alt={data.user.name + ' photo'} />
           <button onClick={signOut}>sign out</button>
         </div>
+        <div className='spacer'></div>
         <footer>
           <nav className='flex-container'>
             <Link href="/page" id='left'><div >HOME</div></Link>
