@@ -21,7 +21,7 @@
   flex-direction: column;
 }
 .spacer{
-height: 10%;
+height: 10vh;
 }
 .review-instance{
   display: flex;
