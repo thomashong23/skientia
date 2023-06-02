@@ -83,7 +83,7 @@ function Home() {
         <div className='body'>
 
         </div>
-        <div>
+        <div id='reviews'>
           {Object.entries(reviewsByTrailName).map(([trailName, reviews]) => (
             <div key={trailName}>
               <h2 className='label_head'>{trailName}</h2>

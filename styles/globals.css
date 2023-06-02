@@ -10,6 +10,10 @@
     --background-end-rgb: 0, 0, 0;
   }
 }
+.stars{
+  display: flex;
+  flex-direction: row;
+}
 #test123{
   box-sizing: border-box;
   min-height: 100%;
@@ -18,7 +22,7 @@
 }
 .review-instance{
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
 }
 .label_head{
   font-size: 7vh;
@@ -185,4 +189,7 @@ option{
   .flex-container {
     flex-direction: row;
   }
+}
+#reviews{
+  width: 90vw;
 }

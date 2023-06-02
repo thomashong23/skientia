@@ -33,9 +33,7 @@ export default function Home() {
     setCurrentTime(formattedTime);
   };
   useEffect(() => {
-    if (status === 'authenticated' && session?.user) {
-      setUsername(session.user.name || '');
-    }
+
   }, [status, session]);
 
   useEffect(() => {
