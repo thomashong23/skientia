@@ -15,6 +15,7 @@ interface Review {
   trailName: string;
   crowdNum: number;
   starHello: number;
+  username: string;
 }
 function Home() {
   const [reviews, setReviews] = useState<Review[]>([]);
@@ -88,8 +89,10 @@ function Home() {
               <h2 className='label_head'>{trailName}</h2>
               {reviews.map((review) => (
                 <div key={review.id} className='review-instance'>
-                  <div className='review-datum'> CROWDS: {renderStars(review.crowdNum)} </div><div className='review-datum'>SNOW: {renderStars(review.starHello)}</div>
-
+                  <div className='stars'>
+                    <div className='review-datum'> CROWDS: {renderStars(review.crowdNum)} </div><div className='review-datum'>SNOW: {renderStars(review.starHello)}</div>
+                  </div>
+                  <div className='user'>By {review.username}</div>
                 </div>
               ))}
             </div>
