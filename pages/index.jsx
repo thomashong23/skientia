@@ -3,9 +3,9 @@ import React from 'react';
 import 'styles/globals.css';
 import Link from 'next/link';
 export default function IndexPage() {
-  console.log('NEXTAUTH SECRET:', process.env.NEXT_SECRET);
   const { data, status } = useSession();
   if (status === 'loading') return <h1> loading... please wait</h1>;
+  console.log('NEXTAUTH SECRET:', process.env.NEXT_SECRET);
   console.log(process.env.GOOGLE_CLIENT_ID);
   if (status === 'authenticated') {
 
@@ -26,7 +26,6 @@ export default function IndexPage() {
       </div>
     );
   }
-  console.log(process.env.GOOGLE_CLIENT_ID)
   return (
     <div>
       <button onClick={() => signIn('google')}>sign in with gooogle</button>
