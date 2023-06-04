@@ -1,16 +1,15 @@
-import { NextAuthOptions } from 'next-auth';
+import NextAuth from 'next-auth';
 import GoogleProvider from 'next-auth/providers/google';
 
 const GOOGLE_CLIENT_ID = process.env.GOOGLE_CLIENT_ID;
 const GOOGLE_CLIENT_SECRET = process.env.GOOGLE_CLIENT_SECRET;
-const NEXT_PUBLIC_SECRET = process.env.NEXT_PUBLIC_SECRET;
 
-const options = {
+export default NextAuth({
   providers: [
     GoogleProvider({
       clientId: GOOGLE_CLIENT_ID,
-      clientSecret: GOOGLE_CLIENT_SECRET,
-    }),
+      clientSecret: GOOGLE_CLIENT_SECRET
+    })
   ],
   callbacks: {
     async signIn(user, account, profile) {
@@ -21,11 +20,7 @@ const options = {
     async redirect(url, baseUrl) {
       // Customize redirect behavior if needed
       return url.startsWith(baseUrl) ? url : baseUrl;
-    },
+    }
   },
-  secret: NEXT_PUBLIC_SECRET,
-
   // Other NextAuth configuration options
-};
-
-export default options;
+});
