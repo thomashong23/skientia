@@ -8,7 +8,6 @@ export default function IndexPage() {
   console.log('NEXTAUTH SECRET:', process.env.NEXT_SECRET);
   console.log(process.env.GOOGLE_CLIENT_ID);
   if (status === 'authenticated') {
-
     return (
       <div className="content">
         <div className="vertical-container">

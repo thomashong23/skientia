@@ -18,8 +18,8 @@ export default function Home() {
   const [rating1, setRating1] = useState(0);
   const [rating, setRating] = useState(0);
   const router = useRouter();
-  const { data: session, status } = useSession();
-  const [username, setUsername] = useState<string>('');
+  const [username, setUsername] = useState('');
+  const { data, status } = useSession();
 
   const handleTrailSelect = (event: React.ChangeEvent<HTMLSelectElement>) => {
     setTrailName(event.target.value);
@@ -32,10 +32,11 @@ export default function Home() {
     setCurrentTime(formattedTime);
     setCurrentTime(formattedTime);
   };
-
   useEffect(() => {
     getCurrentTime();
-
+    if (data?.user?.name) {
+      setUsername(data?.user?.name)
+    }
 
   }, []); // Add empty dependency array
 
@@ -121,7 +122,6 @@ export default function Home() {
           crowdNum,
           starHello,
           currentTime,
-          username,
         }),
       });
 

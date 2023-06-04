@@ -11,8 +11,8 @@ console.log('NEXT_PUBLIC_SECRET:', NEXT_PUBLIC_SECRET);
 export const authOptions = {
   providers: [
     GoogleProvider({
-      clientId: process.env.GOOGLE_CLIENT_ID,
-      clientSecret: process.env.GOOGLE_CLIENT_SECRET,
+      clientId: GOOGLE_CLIENT_ID,
+      clientSecret: GOOGLE_CLIENT_SECRET,
       redirect_uri: "https://skientia.vercel.app/api/auth/callback/google",
     }),
   ],
