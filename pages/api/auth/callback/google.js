@@ -1,7 +1,11 @@
 import NextAuth from 'next-auth';
 import GoogleProvider from 'next-auth/providers/google';
 
+
+const NEXT_PUBLIC_SECRET = process.env.NEXT_PUBLIC_SECRET;
+
 export default NextAuth({
+
   providers: [
     GoogleProvider({
       clientId: process.env.GOOGLE_CLIENT_ID,
@@ -19,6 +23,7 @@ export default NextAuth({
       return url.startsWith(baseUrl) ? url : baseUrl;
     },
   },
+  secret: NEXT_PUBLIC_SECRET,
 
   // Other NextAuth configuration options
 });
