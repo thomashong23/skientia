@@ -9,7 +9,10 @@ export const googleProvider = GoogleProvider({
 });
 export default NextAuth({
   providers: [
-    googleProvider
+    GoogleProvider({
+      clientId: GOOGLE_CLIENT_ID,
+      clientSecret: GOOGLE_CLIENT_SECRET,
+    })
   ],
   callbacks: {
     async signIn(user, account, profile) {
