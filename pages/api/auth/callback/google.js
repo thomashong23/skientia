@@ -1,6 +1,6 @@
 import NextAuth from 'next-auth';
 import GoogleProvider from 'next-auth/providers/google';
-
+const NEXT_PUBLIC_SECRET = process.env.NEXT_PUBLIC_SECRET;
 const GOOGLE_CLIENT_ID = process.env.GOOGLE_CLIENT_ID;
 const GOOGLE_CLIENT_SECRET = process.env.GOOGLE_CLIENT_SECRET;
 
@@ -22,5 +22,9 @@ export default NextAuth({
       return url.startsWith(baseUrl) ? url : baseUrl;
     }
   },
+  session: {
+    strategy: 'jwt',
+  },
+  secret: NEXT_PUBLIC_SECRET,
   // Other NextAuth configuration options
 });
