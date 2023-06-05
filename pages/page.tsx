@@ -45,7 +45,7 @@ function Home() {
           }
           else {
             deleteReviews.push(reviewsArray[i])
-            console.log("Deleting " + reviewsArray[i].trailName)
+
           }
         }
 
