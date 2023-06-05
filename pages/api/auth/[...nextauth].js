@@ -3,7 +3,6 @@ import GoogleProvider from 'next-auth/providers/google';
 const GOOGLE_CLIENT_ID = process.env.GOOGLE_CLIENT_ID;
 const GOOGLE_CLIENT_SECRET = process.env.GOOGLE_CLIENT_SECRET;
 const NEXT_PUBLIC_SECRET = process.env.NEXT_PUBLIC_SECRET;
-const secretabc = "G7!n0rAS@zLjFpDXb#1e";
 
 // Log environment variable values
 console.log('GOOGLE_CLIENT_ID:', GOOGLE_CLIENT_ID);
@@ -20,6 +19,6 @@ export const authOptions = {
   session: {
     strategy: 'jwt',
   },
-  secret: secretabc,
+  secret: "RBn1aifap3pvoGeKMJkO8GsvAbwZQ3o/E4M4Q7IKVhk=",
 };
 export default NextAuth(authOptions);
