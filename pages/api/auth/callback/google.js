@@ -22,9 +22,5 @@ export default NextAuth({
       return url.startsWith(baseUrl) ? url : baseUrl;
     }
   },
-  session: {
-    strategy: 'jwt',
-  },
-  secret: NEXT_PUBLIC_SECRET,
   // Other NextAuth configuration options
 });
