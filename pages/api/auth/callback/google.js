@@ -1,4 +1,4 @@
-import NextAuth from 'next-auth';
+import NextAuth from '../[...nextauth].js';
 import GoogleProvider from 'next-auth/providers/google';
 const NEXT_PUBLIC_SECRET = process.env.NEXT_PUBLIC_SECRET;
 const GOOGLE_CLIENT_ID = process.env.GOOGLE_CLIENT_ID;

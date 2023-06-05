@@ -16,9 +16,11 @@ export const authOptions = {
       redirect_uri: "https://skientia.vercel.app/api/auth/callback/google",
     }),
   ],
+
   session: {
     strategy: 'jwt',
   },
   secret: "RBn1aifap3pvoGeKMJkO8GsvAbwZQ3o/E4M4Q7IKVhk=",
+
 };
 export default NextAuth(authOptions);
