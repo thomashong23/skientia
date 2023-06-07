@@ -61,7 +61,7 @@ export default async function postData(req, res) {
     //   return res.status(401).json({ error: 'Not authenticated' });
     // }
 
-    const name = user.name; // Access the user's name
+    // const name = user.name; // Access the user's name
     // Perform the necessary Firebase database operations
     try {
       const database = admin.database();
