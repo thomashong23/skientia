@@ -21,6 +21,9 @@
   #left {
     flex: 100%;
   }
+  #spacer{
+    height: 10%;
+  }
 }
 
 
