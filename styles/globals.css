@@ -204,22 +204,14 @@ option{
   .star-rating{
     font-size: 40px;
   }
-  .flex-container {
-    flex-direction: column;
-  }
+ 
   #reviewSnow{
-    font-size: 30px;
+    font-size: 20px;
   }
   #reviewCrowd{
-    font-size: 30px;
+    font-size: 20px;
   }
 
-  #header,
-  #right,
-  #middle,
-  #left {
-    flex: 100%;
-  }
   #spacer{
     height: 10vh;
   }

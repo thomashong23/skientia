@@ -25,6 +25,6 @@ export default NextAuth({
       return url.startsWith(baseUrl) ? url : baseUrl;
     }
   },
-  secret: "RBn1aifap3pvoGeKMJkO8GsvAbwZQ3o/E4M4Q7IKVhk=",
+
   // Other NextAuth configuration options
 });
