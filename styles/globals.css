@@ -10,6 +10,26 @@
     --background-end-rgb: 0, 0, 0;
   }
 }
+@media (max-width: 800px) {
+  .flex-container {
+    flex-direction: column;
+  }
+  
+  #header,
+  #right,
+  #middle,
+  #left {
+    flex: 100%;
+  }
+}
+These modifications include adjusting the spacing, font sizes, and heights of various elements to improve the appearance on mobile devices. You can further customize these values based on your specific requirements and preferences.
+
+
+
+
+
+
+
 .stars{
   display: flex;
   flex-direction: row;
