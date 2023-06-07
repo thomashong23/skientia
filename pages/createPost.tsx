@@ -172,6 +172,8 @@ export default function Home() {
           </div>
           <div id="submitForm"><button type="submit">Submit</button></div>
         </form>
+        <div id='spacer'>nothing to see here
+        </div>
       </div>
       <footer>
         <nav className='flex-container'>
