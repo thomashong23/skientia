@@ -10,21 +10,7 @@
     --background-end-rgb: 0, 0, 0;
   }
 }
-@media (max-width: 800px) {
-  .flex-container {
-    flex-direction: column;
-  }
-  
-  #header,
-  #right,
-  #middle,
-  #left {
-    flex: 100%;
-  }
-  #spacer{
-    height: 10%;
-  }
-}
+
 
 
 .stars{
@@ -212,4 +198,23 @@ option{
 }
 #reviews{
   width: 90vw;
+}
+
+@media (max-width: 800px) {
+  .star-rating{
+    font-size: 20px;
+  }
+  .flex-container {
+    flex-direction: column;
+  }
+
+  #header,
+  #right,
+  #middle,
+  #left {
+    flex: 100%;
+  }
+  #spacer{
+    height: 10vh;
+  }
 }
