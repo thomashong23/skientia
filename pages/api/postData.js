@@ -73,8 +73,6 @@ export default async function postData(req, res) {
           crowdNum,
           starHello,
           currentTime,
-          name,
-
         });
 
       }
